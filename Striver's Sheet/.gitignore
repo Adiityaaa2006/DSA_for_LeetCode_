@@ -1,0 +1,15 @@
+# Executable files
+*.exe
+
+# Output folders
+output/
+
+# VS Code settings
+.vscode/
+
+# Object files
+*.o
+*.obj
+
+# Temporary files
+*.tmp
