@@ -1,15 +1,20 @@
-# Executable files
+﻿# Prevent nested repositories
+DSA_Solving/
+
+# Build files
 *.exe
-
-# Output folders
-output/
-
-# VS Code settings
-.vscode/
-
-# Object files
 *.o
-*.obj
+*.out
 
-# Temporary files
-*.tmp
+# IDE
+.vscode/
+.idea/
+*.code-workspace
+
+# System
+.DS_Store
+Thumbs.db
+
+# Temp files
+tempCodeRunnerFile.cpp
+*~
