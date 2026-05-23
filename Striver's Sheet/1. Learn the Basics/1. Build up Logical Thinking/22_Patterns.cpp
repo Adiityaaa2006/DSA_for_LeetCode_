@@ -477,21 +477,20 @@ void pattern17(int n) {
 
 /*
 
-E
-ED
-EDC
-EDCB
-EDCBA
+F
+EF
+DEF
+CDEF
+BCDEF
+ABCDEF
 
 */
 
 // Code
 void pattern18(int n) {
     for(int i=0; i<=n; i++) {
-        char ch = 'A' + n;
-        for(int j=0; j<=i; j++) {
+        for(char ch='A'+n-i; ch<='A'+n; ch++) {
             cout << ch;
-            ch--;
         }
         cout << endl;
     }
@@ -506,23 +505,46 @@ void pattern18(int n) {
 */
 
 // Code
-// void pattern19(int n) {
-//     for(int i=0; i<n; i++) {
-//         for(int j=0; j<=i; j++) {
-//             cout << "*";
-//         }
+void pattern19(int n) {
+    for(int i=0; i<=n; i++) {
+        for(int j=0; j<=n-i; j++) {
+            cout << "*";
+        }
 
-//         for(int j=0; j)
-//         cout << endl;
-//     }
-// }
+        for(int j=0; j<2*i; j++) {
+            cout << " ";
+        }
+
+        for(int j=0; j<=n-i; j++) {
+            cout << "*";
+        }
+        
+        cout << endl;
+    }
+
+    for(int i=0; i<=n; i++) {
+        for(int j=n-1; j>=0; j--) {
+            cout << "*";
+        }
+
+        for(int j=0; j<2*i; j++) {
+            cout << " ";
+        }
+
+        for(int j=n-1; j>=0; j--) {
+            cout << "*";
+        }
+        
+        cout << endl;
+    }
+}
 
 int main() {
-    int n = 4;
+    int n = 5;
 
     // cout << "Enter the Number: ";
     // cin >> n;
 
-    pattern18(n);
+    pattern19(n);
 
 }
