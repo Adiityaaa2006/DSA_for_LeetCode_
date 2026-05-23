@@ -264,20 +264,6 @@ void pattern9(int n) {
 
 // Code
 void pattern10(int n) {
-    // for(int i=0; i<=n; i++) {
-    //     for(int j=0; j<i; j++) {
-    //         cout << "*";
-    //     }
-    //     cout << endl;
-    // }
-
-    // for(int i=n-1; i>=0; i--) {
-    //     for(int j=0; j<i; j++) {
-    //         cout << "*";
-    //     }
-    //     cout << endl;
-    // }
-
     for(int i=0; i<=2*n-1; i++) {
         int stars = i;
         
@@ -500,7 +486,18 @@ void pattern18(int n) {
 
 /*
 
-
+************
+*****  *****
+****    ****
+***      ***
+**        **
+*          *
+*          *
+**        **
+***      ***
+****    ****
+*****  *****
+************
 
 */
 
@@ -523,15 +520,15 @@ void pattern19(int n) {
     }
 
     for(int i=0; i<=n; i++) {
-        for(int j=n-1; j>=0; j--) {
+        for(int j=0; j<=i; j++) {
             cout << "*";
         }
 
-        for(int j=0; j<2*i; j++) {
+        for(int j=0; j<2*(n-i); j++) {
             cout << " ";
         }
 
-        for(int j=n-1; j>=0; j--) {
+        for(int j=0; j<=i; j++) {
             cout << "*";
         }
         
@@ -539,12 +536,122 @@ void pattern19(int n) {
     }
 }
 
+// 
+
+/*
+
+*        *
+**      **
+***    ***
+****  ****
+**********
+****  ****
+***    ***
+**      **
+*        *
+
+*/
+
+// Code
+void pattern20(int n) {
+    for(int i=1; i<=2*n-1; i++) {
+
+        int stars = i;
+        if (i > n) stars = 2*n-i;
+        for(int j=0; j<stars; j++) {
+            cout << "*";
+        }
+
+        for(int j=0; j<2*(n-stars); j++) {
+            cout << " ";
+        }
+
+        for(int j=0; j<stars; j++) {
+            cout << "*";
+        }
+        
+        cout << endl;
+    }
+}
+
+// Hollow Square
+
+/*
+
+*****
+*   *
+*   *
+*   *
+*****
+
+*/
+
+// Code
+void pattern21(int n) {
+    // for(int i=0; i<n; i++) {
+    //     cout << "*";
+    // }
+
+    // cout << endl;
+
+    // for(int i=1; i<n-1; i++) {
+    //     cout << "*";
+    //     for(int j=0; j<n-2; j++) {
+    //         cout << " ";
+    //     }
+    //     cout << "*";
+    //     cout << endl;
+    // }
+
+    // for(int i=0; i<n; i++) {
+    //     cout << "*";
+    // }
+
+    for(int i=0; i<n; i++) {
+        for(int j=0; j<n; j++) {
+            if( i==0 || j==0 || i==n-1 || j==n-1 ) {
+                cout << "*";
+            }
+            else cout << " ";
+        }
+        cout << endl;
+    }
+}
+
+// Numeric Square
+
+/*
+
+4444444
+4333334
+4322234
+4321234
+4322234
+4333334
+4444444
+
+*/
+
+// Code
+void pattern22(int n) {
+    for(int i=0; i<2*n-1; i++) {
+        for(int j=0; j<2*n-1; j++) {
+            int top = i;
+            int left = j;
+            int right = (2*n - 2) - j;
+            int down = (2*n - 2) - i;
+            cout << (n - min(min(top, down), min(left, right)));
+        }
+        cout << endl;
+    }
+}
+
 int main() {
-    int n = 5;
+    int n;
 
-    // cout << "Enter the Number: ";
-    // cin >> n;
+    cout << "Enter the Number: ";
+    cin >> n;
 
-    pattern19(n);
+    pattern22(n);
 
 }
