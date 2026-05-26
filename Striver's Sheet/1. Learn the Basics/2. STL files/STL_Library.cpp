@@ -207,20 +207,92 @@ void explainStack() {
     st.push(4);  // {4, 3, 2, 1}
     st.emplace(5);  // {5, 4, 3, 2, 1}
 
-    cout << st.top();  // print 5 "st[2] is invalid"
+    cout << st.top() << endl;  
+    // print 5 "st[2] is invalid"
 
-    st.pop();  // st looks like {4, 3, 2, 1}
+    st.pop();  
+    // st looks like {4, 3, 2, 1}
 
-    cout << st.top(); // 3
+    cout << st.top() << endl; 
+    // Output - 3
 
-    cout << st.size(); // 4
+    cout << st.size() << endl; 
+    // Output - 4
 
-    cout << st.empty(); // False
+    cout << st.empty() << endl; 
+    // Output - 0 (False)
 
     stack<int>st1, st2;
     st1.swap(st2); // swap
 }
 
+void explainQueue() {
+    queue<int> q;
+    // FIFO - First In First Out
+
+    q.push(1);  // {1}
+    q.push(2);  // {1, 2}
+    q.push(3);  // {1, 2, 3}
+    q.push(4);  // {1, 2, 3, 4}
+    q.emplace(5);  // {1, 2, 3, 4, 5}
+
+    q.back() += 5;  // back means the last here last is 5 so 5 + 5 = 10
+    cout << q.back() << endl;
+    // Output - 10
+
+    cout << q.front() << endl;  
+    // print 1 
+    // "q[2] is invalid"
+
+    q.pop();  
+    // q looks like {2, 3, 4, 5}
+
+    cout << q.front() << endl; 
+    // Output - 2
+
+    cout << q.size() << endl; 
+    // Output - 4
+
+    cout << q.empty() << endl; 
+    // Output - 0 (False)
+
+    queue<int>st1, st2;
+    st1.swap(st2); // swap
+}
+
+void explainPQ() {
+    priority_queue<int> pq;
+    // Stores data in decreasing order in a priority
+
+    pq.push(10);  // {10}
+    pq.push(20);  // {20, 10}
+    pq.push(30);  // {30, 20, 10}
+    pq.emplace(40);  // {40, 30, 20, 10}
+    pq.emplace(8);  // {40, 30, 20, 10, 8}
+
+    cout << pq.top() << endl;
+    // Output - 40
+
+    pq.pop();  // {30, 20, 10}
+
+    cout << pq.top() << endl;
+    // Output - 30
+
+    // size swap empty functions are same as others
+
+    // Minimum Heap
+    priority_queue<int, vector<int>, greater<int>> prq;
+    // Stores elements in an ascending order
+
+    prq.push(5);  // {5}
+    prq.push(2);  // {2, 5}
+    prq.push(8);  // {2, 5, 8}
+    prq.emplace(10);  // {2, 5, 8, 10}
+
+    cout << prq.top() << endl;
+    // Output - 2
+}
+ 
 int main() {
     // Pairs
     // int a = 5;
@@ -244,6 +316,12 @@ int main() {
     // explainDeque();
 
     // Stack
-    explainStack();
+    // explainStack();
+
+    // Queue
+    // explainQueue();
+
+    // Priority Queue
+    explainPQ();
 
 }
