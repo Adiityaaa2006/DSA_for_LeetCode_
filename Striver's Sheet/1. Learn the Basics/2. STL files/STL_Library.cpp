@@ -261,8 +261,9 @@ void explainQueue() {
 }
 
 void explainPQ() {
+    // Max Heap
     priority_queue<int> pq;
-    // Stores data in decreasing order in a priority
+    // Stores data in sorted order from higher to higher
 
     pq.push(10);  // {10}
     pq.push(20);  // {20, 10}
@@ -282,7 +283,7 @@ void explainPQ() {
 
     // Minimum Heap
     priority_queue<int, vector<int>, greater<int>> prq;
-    // Stores elements in an ascending order
+    // Stores data in sorted order in a priority from lower to higher
 
     prq.push(5);  // {5}
     prq.push(2);  // {2, 5}
@@ -291,6 +292,71 @@ void explainPQ() {
 
     cout << prq.top() << endl;
     // Output - 2
+
+    // Time Complexity
+
+    // push - log n
+    // top - O(1)
+    // pop - log n
+
+}
+
+void explainSet() {
+    set<int> st;
+    // Stores only unique elemenst in a sorted order.
+    
+    st.insert(1);  // {1}
+    st.emplace(2);  // {1, 2}
+    st.emplace(3);  // {1, 2, 3}
+    st.emplace(2);  // {1, 2, 3}
+    st.emplace(4);  // {1, 2, 3, 4}
+
+    // begin(), end(), rbegin(), rend(), size(),
+    // empty() and swap() are same as others
+
+    // {1, 2, 3, 4}
+    auto it1 = st.find(3);
+
+    // {1, 2, 3, 4}
+    auto it2 = st.find(6);
+    // 6 is not in list so it will return end()
+    // Result - end()
+
+    st.erase(5);
+    // erase 5
+
+    int cnt = st.count(1);
+    // Result - 1 if exists else 0 if not exists
+
+    auto it3 = st.find(3);
+    auto it4 = st.find(6);
+    st.erase(it3, it4);  // {first, last}
+
+}
+
+void explainMultiSet() {
+    // Everything is same as set
+    // only stores duplicate element also
+
+    multiset<int> ms;
+    ms.insert(1);  // {1}
+    ms.insert(1);  // {1, 1}
+    ms.insert(1);  // {1, 1, 1}
+
+    ms.erase(1);  // all 1 is erased
+
+    int cnt = ms.count(1);
+
+    // only single 1 is erased
+    ms.erase(ms.find(1));
+
+    // rest all functions same as set
+}
+
+void explainMap() {
+    map<int, int> mp;
+    map<int, pair<int ,int>> mpp;
+    map<pair<int ,int>, int> mapp;
 }
  
 int main() {
@@ -322,6 +388,9 @@ int main() {
     // explainQueue();
 
     // Priority Queue
-    explainPQ();
+    // explainPQ();
+
+    // Set
+    explainSet();
 
 }
