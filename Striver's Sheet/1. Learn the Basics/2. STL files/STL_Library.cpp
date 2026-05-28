@@ -354,10 +354,95 @@ void explainMultiSet() {
 }
 
 void explainMap() {
+    // Map is used to store the value with a key.
+    // All keys are unique and stored sorted by key.
+
     map<int, int> mp;
+    // key : Value
     map<int, pair<int ,int>> mpp;
+    // key : pair<value, value>
     map<pair<int ,int>, int> mapp;
+    // pair<key, key> : value
+
+    mp[1] = 2;  // stores as {1, 2}
+    mp.emplace(3, 1);  // stores as {3, 1}
+    mp.insert({2, 4});  // stores as {2, 4}
+    mapp[{2, 3}] = 10;
+    // {1, 2} {2, 4} {3, 1}
+
+    // Prints each key-value pair in the format: key value (each on a new line)
+    for (auto it : mp) {
+        cout << it.first << " " << it.second << endl;
+    }
+
+    for (auto entry : mapp) {
+        cout << "("<<entry.first.first << ", " << entry.first.second << ") - " << entry.second << endl;
+    }
+
+    // {1, 2} {2, 4} {3, 1}
+    cout << mp[1] << endl;  // Output - 2 
+    cout << mp[6] << endl;  // 0 - Null (6 is out of range)
+
+    auto it1 = mp.find(3); // {3, 1}
+    cout << it1->second << endl;
+    // Finds key (3) and using iterator printing the value
+
+    auto it2 = mp.find(6);
+    cout << it2->second;
+    // Finding the non existing key return 0(NULL)
+
+    auto it3 = mp.lower_bound(2);
+
+    auto it4 = mp.upper_bound(3);
 }
+
+void explainMultiMap() {
+    // everything same as map, only it can be store multiple duplicate keys in sorted order
+    // only mp[key] cannot be used here
+}
+
+void explainUnorderedMap() {
+    // same as set and unordered_set difference
+
+    // Time Complexity 
+    // Map - log n
+    // unordered_map - best O(1) worst O(n)
+
+}
+
+// Algorithms
+
+void explainExtra() {
+
+    int a[5] = {1, 5, 3, 2};
+    int n = 4;
+    sort(a, a+n);
+    for (auto it : a) {
+        cout << it << " ";
+    }
+    cout << endl;
+    // Output - 1 2 3 5 0
+
+    // If you want to use vector syntax, use vector instead:
+    // vector<int> a = {1, 5, 3, 2};
+    // sort(a.begin(), a.end());  // For vectors only
+    
+    sort(a+2 , a+n);
+    for (auto it1 : a) {
+        cout << it1 << " ";
+    }
+    // Output - 1 5 2 3 0 
+
+    sort(a, a+n, greater<int>());  
+    // Store in descending order
+
+    pair<int, int> b[] = {{1, 2}, {2, 3}, {4, 5}};
+
+    // If I want to sort the array according to second element
+    // 
+
+}
+
  
 int main() {
     // Pairs
@@ -391,6 +476,14 @@ int main() {
     // explainPQ();
 
     // Set
-    explainSet();
+    // explainSet();
+
+    // Map
+    // explainMap();
+
+    // Algorithms
+    explainExtra();
+
+
 
 }
