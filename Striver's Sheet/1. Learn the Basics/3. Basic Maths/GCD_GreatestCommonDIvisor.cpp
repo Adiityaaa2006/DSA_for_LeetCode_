@@ -4,6 +4,11 @@ Problem Statement - GCD of Two Numbers
 You are given two integers n1 and n2. You need find the Greatest Common Divisor (GCD) of the two given numbers. Return the GCD of the two numbers.
 The Greatest Common Divisor (GCD) of two integers is the largest positive integer that divides both of the integers.
 
+What is GCD (Greatest Common DIvisor) ?
+
+The Greatest Common Divisor (GCD)—also known as the Greatest Common Factor (GCF) or Highest Common Factor (HCF) 
+is the largest positive integer that divides two or more numbers evenly, without leaving a remainder.
+
 Example 1
 Input: n1 = 4, n2 = 6
 Output: 2
