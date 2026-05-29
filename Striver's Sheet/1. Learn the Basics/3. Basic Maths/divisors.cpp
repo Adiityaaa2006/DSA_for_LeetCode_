@@ -47,7 +47,7 @@ int main() {
     Solution s1;
 
     vector<int> result = s1.divisors(n);
-    for (int i=1; i<=result.size(); i++) {
+    for (int i=0; i<result.size(); i++) {
         cout << result[i] << " ";
     }
 }
