@@ -1,5 +1,6 @@
 #include<iostream>
 #include<vector>
+#include<algorithm>  // For reverse
 using namespace std;
 
 class Solution {
@@ -12,6 +13,10 @@ class Solution {
             ans[i] = arr[n-1-i];
         }
         return ans;
+    }
+
+    void reverseArray(vector<int>& arr) {
+        reverse(arr.begin(), arr.end());
     }
 };
 
@@ -26,6 +31,14 @@ int main() {
     for(int num : result) {
         cout << num << " ";
     }
+    cout << endl;
+
+    S1.reverseArray(arr);
+    cout << "Reverse Array: ";
+    for (int num : arr) {
+        cout << num << " ";
+    }
+    cout << endl;
 
     return 0;
 }
