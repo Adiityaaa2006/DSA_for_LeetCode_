@@ -3,13 +3,17 @@ using namespace std;
 
 class Solution {
     public:
-    void factorial(int n, int fact) {
+    int factorial(int n, int fact) {
 
-        for (int i=1; i<=n; i++) {
-            fact = fact * i;
+        // for (int i=1; i<=n; i++) {
+        //     fact = fact * i;
+        // }
+
+        // return fact;
+        if (n==0) {
+            return fact;
         }
-
-        cout << "Factorial: " << fact;
+        return factorial(n-1, fact*n);
     }
 };
 
@@ -20,6 +24,8 @@ int main() {
     cin >> n;
 
     Solution S1;
-    S1.factorial(n, 1);
+    int result = S1.factorial(n, 1);
+
+    cout << "Factorial: " << result;
 }
 
