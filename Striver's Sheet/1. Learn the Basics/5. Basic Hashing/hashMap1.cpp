@@ -2,13 +2,24 @@
 #include<vector>
 using namespace std;
 
-class Solution {
-    public:
-    void hashMap() {
-        vector<int> arr;
-        int n = arr.size();
+int main() {
+    string s;
+    cout << "Enter the String: ";
+    cin >> s;
 
-        int hash[n] = {0};
-
+    // pre compute
+    int hash[26] = {0};  // use 256 for all charachters
+    for (int i=0; i<s.size(); i++) {
+        hash[s[i] - 'a']++;
     }
-};
+
+    int q;
+
+    cin >> q;
+    while(q--) {
+        char c;
+        cin >> c;
+        // fetch
+        cout << hash[c-'a'] << endl;
+    }
+}
