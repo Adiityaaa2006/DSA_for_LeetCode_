@@ -15,11 +15,13 @@ int main() {
 
     int q;
 
+    cout << "Occurence? ";
     cin >> q;
     while(q--) {
         char c;
+        cout << "Enter the string to check: ";
         cin >> c;
         // fetch
-        cout << hash[c-'a'] << endl;
+        cout << "Frequency: " << hash[c-'a'] << endl;
     }
 }
