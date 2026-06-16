@@ -1,25 +1,22 @@
 #include<iostream>
+#include<vector>
 using namespace std;
 
 class Solution {
     public:
-    void insertionSort(int arr[], int n) {
+    void insertionSort(vector<int>& arr, int n) {
         for (int i=0; i<n; i++) {
-            int mini = i;
-
-            // 4, 6, 2, 9, 5
-
-            for (int j=i+1; j<n; j++) {
-                if (arr[j] < arr[mini]) {
-                    mini = j;
-                }
+            int j = i;
+            while(j > 0 && arr[j-1] > arr[j]) {
+                int temp = arr[j-1];
+                arr[j-1] = arr[j];
+                arr[j] = temp;
+                j--;
+                // swap(arr[j-1], arr[j]);
             }
-            int temp = arr[mini];
-            arr[mini] = arr[i];
-            arr[i] = temp;
         }
 
-        cout << "After Insertion Sorting: \n";
+        cout << "After Insertion Sort: " << endl;
         for (int i=0; i<n; i++) {
             cout << arr[i] << " ";
         }
@@ -28,8 +25,8 @@ class Solution {
 };
 
 int main() {
-    int arr[] = {13, 46, 24, 52, 20, 9};
-    int n = sizeof(arr) / sizeof(arr[0]);
+    vector<int> arr = {7, 4, 1, 5, 3};
+    int n = arr.size();
 
     cout << "Before Insertion Sorting: \n";
     for (int i=0; i<n; i++) {
@@ -39,6 +36,4 @@ int main() {
 
     Solution S1;
     S1.insertionSort(arr, n);
-
-    return 0;
 }
