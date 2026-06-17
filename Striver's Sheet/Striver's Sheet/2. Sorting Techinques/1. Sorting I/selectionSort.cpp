@@ -5,17 +5,17 @@ class Solution {
     public:
     void insertionSort(int arr[], int n) {
         for (int i=0; i<n; i++) {
-            int key = i;
+            int mini = i;
 
             // 4, 6, 2, 9, 5
 
             for (int j=i+1; j<n; j++) {
-                if (arr[j] < arr[key]) {
-                    key = j;
+                if (arr[j] < arr[mini]) {
+                    mini = j;
                 }
             }
-            int temp = arr[key];
-            arr[key] = arr[i];
+            int temp = arr[mini];
+            arr[mini] = arr[i];
             arr[i] = temp;
         }
 
