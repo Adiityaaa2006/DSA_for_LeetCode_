@@ -6,10 +6,10 @@ class Solution {
     public:
     void rec_bubbleSort(vector<int>& arr, int n) {
         // cout << "N Value: " << n << endl;
-        if (n < 0) return;
+        if (n <= 1) return;
 
         int i = 0;
-        while(i < n) {
+        while(i < n-1) {
             // cout << "While Start i=" << i << " ";
             if (arr[i] > arr[i+1]) {  // Sort Array in Ascending Order - Lower to Greater
                 swap(arr[i], arr[i+1]);  
